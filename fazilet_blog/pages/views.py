@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
+from pages.models import Post
 def index_func(request):
-    return render(request,"home/index.html")
+    posts = Post.objects.order_by('published_date')
+    return render(request,"home/index.html",{'posts': posts})
 
 def about_func(request):
     return render(request,"page/about.html")

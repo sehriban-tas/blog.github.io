@@ -12,6 +12,7 @@ class Page(models.Model):
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
+    sub_title = models.CharField(max_length=200,default="")
     text = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
