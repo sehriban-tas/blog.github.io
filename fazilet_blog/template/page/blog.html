@@ -43,7 +43,29 @@
 </div>
     <hr>
 {% endfor %}
+       <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?sayfa=1">&laquo; ilk</a>
+            <a href="?sayfa={{ contacts.previous_page_number }}">önceki</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?sayfa={{ posts.next_page_number }}">sonraki</a>
+            <a href="?sayfa={{ posts.paginator.num_pages }}">son &raquo;</a>
+        {% endif %}
+    </span>
+</div>
   </div>
+       </div>
+  </div>
+
   </article>
 
 
