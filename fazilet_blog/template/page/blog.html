@@ -8,62 +8,43 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Lorem ipsum dolor sit amet.</h1>
-            <h2 class="subheading">Lorem ipsum dolor sit.</h2>
-            <span class="meta">Posted by
-              <a href="#">Fazilet Taş</a>
-               Ağustos 24, 2019</span>
+
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              <a href="#"></a>
+               </span>
           </div>
         </div>
       </div>
     </div>
   </header>
 
+
   <!-- Post Content -->
   <article>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis!</p>
+ {% for post in posts %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis.</p>
+            <h2 class="post-title">
+               {{ post.title }}
+            </h2>
+            <p class="post-subtitle">
+                {{ post.text }}
+            </p>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo molestias, quam.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-          <h2 class="section-heading">Lorem ipsum dolor.</h2>
-
-          <p>Lorem ipsum dolor sit amet, consectetur.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-          <blockquote class="blockquote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eum, facilis fuga molestias quibusdam rem!</blockquote>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-          <h2 class="section-heading">Lorem ipsum dolor sit amet.</h2>
-
-          <p>Lorem ipsum dolor sit.</p>
-
-          <a href="#">
-            <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
-          </a>
-          <span class="caption text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
-
-          <p>Lorem ipsum dolor sit amet, consectetur.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus error fuga laboriosam perspiciatis, vero voluptates.</p>
-
-          <p>Lorem ipsum.
-            <a href="http://spaceipsum.com/">Space Ipsum</a>. Lorem.
-            <a href="https://www.flickr.com/photos/nasacommons/">Lorem ipsum dolor.</a></p>
+          <p class="post-meta">Posted by
+            <a href="/page/about">{{ post.author }}</a>
+            {{ post.published_date}}</p>
         </div>
-      </div>
-    </div>
+ </div>
+</div>
+    <hr>
+{% endfor %}
+  </div>
   </article>
 
-  <hr>
+
 {% endblock %}
